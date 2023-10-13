@@ -1,5 +1,3 @@
-include ./common.mk
-
 UI_DIST_PATH=$(UI_PATH)/dist
 
 .PHONY: clean-ui

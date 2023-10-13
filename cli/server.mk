@@ -1,11 +1,31 @@
-include ./common.mk
+BIN_NAME=mysqldoc
+MAIN_GO_FILE_NAME=mysqldoc.go
+
+# platform
+DARWIN_BIN_NAME=$(BIN_NAME)-darwin
+WINDOWS_BIN_NAME=$(BIN_NAME).exe
+LINUX_BIN_NAME=$(BIN_NAME)-linux
+
+BUILD_BIN_PATH=$(OUT_PATH)/$(BIN_NAME)
+DARWIN_BIN_PATH=$(OUT_PATH)/$(DARWIN_BIN_NAME)
+WINDOWS_BIN_PATH=$(OUT_PATH)/$(WINDOWS_BIN_NAME)
+LINUX_BIN_PATH=$(OUT_PATH)/$(LINUX_BIN_NAME)
+
+BUILD_PARAMS=CGO_ENABLED=0 GOARCH=arm64
+
+# upx
+IF_UPX= $(shell command -v upx)
+BUILD_UPX=$(if $(IF_UPX), upx $(BUILD_BIN_PATH))
+DARWIN_UPX=$(if $(IF_UPX), upx $(DARWIN_BIN_PATH))
+WINDOWS_UPX=$(if $(IF_UPX), upx $(WINDOWS_BIN_PATH))
+LINUX_UPX=$(if $(IF_UPX), upx $(LINUX_BIN_PATH))
 
 .PHONY: clean-server
 clean-server:
 	@rm -rf $(OUT_PATH)
 	@echo "Clean Server finish ..."
 
-.PHONY: dev-api dev-all
+.PHONY: dev-server dev-server-api
 #### dev ####
 dev-server-api:
 	@cd $(SRC_PATH) && \

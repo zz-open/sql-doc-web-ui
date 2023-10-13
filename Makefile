@@ -1,3 +1,4 @@
+include ./cli/common.mk
 include ./cli/ui.mk
 include ./cli/server.mk
 
@@ -16,7 +17,8 @@ help:
 	@echo "    build-darwin     : Build the darwin binary of this project"
 
 test:
-	@echo $(CURRENT_PATH)
+	@echo $(ROOT_PATH)
+	@echo $(PROJECT_ROOT_PATH)
 
 # dev 开发模式
 .PHONY: dev
