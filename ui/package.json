@@ -25,6 +25,7 @@
   "devDependencies": {
     "@iconify-json/ep": "^1.1.12",
     "@vitejs/plugin-vue": "^4.2.3",
+    "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.68.0",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-element-plus": "^0.8.0",

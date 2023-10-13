@@ -11,7 +11,7 @@ GO_CTL=goctl
 MAKEFILE_PATH=$(abspath $(lastword $(MAKEFILE_LIST)))
 MAKEFILE_DIR=$(abspath $(dir $(MAKEFILE_PATH)))
 CURRENT_PATH=$(MAKEFILE_DIR)
-ROOT_PATH=$(abspath $(CURRENT_PATH)/)
+ROOT_PATH=$(abspath $(CURRENT_PATH)/../)
 
 PROJECT_ROOT_PATH=$(MYSQLDOC_PATH)
 # 服务端根目录绝对路径

@@ -1,5 +1,5 @@
-include ui.mk
-include server.mk
+include ./cli/ui.mk
+include ./cli/server.mk
 
 .PHONY: help test
 help:
