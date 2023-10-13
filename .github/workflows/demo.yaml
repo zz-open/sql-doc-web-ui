@@ -1,0 +1,113 @@
+name: Demo
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ 'ubuntu-latest', 'macos-latest', 'windows-latest' ]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4.1.0
+        with:
+          go-version: "1.20"
+
+      - name: Install Go Dependencies
+        run: |
+          go get -v -t -d ./...
+
+          - name: Lint go
+            run: |
+              go vet -stdmethods=false $(go list ./...)
+          
+              go mod tidy
+              if ! test -z "$(git status --porcelain)"; then
+                echo "Please run 'go mod tidy'"
+                exit 1
+              fi
+
+      - name: Set up UPX
+        uses: crazy-max/ghaction-upx@v3
+        with:
+          install-only: true
+
+      - name: Set up Pnpm
+        uses: pnpm/action-setup@v2.4.0
+        with:
+          version: latest
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: 18.6.0
+
+      - name: Install Node.Js Dependencies
+        run: |
+          cd ./ui
+          pnpm i
+
+      - name: build-mac
+        if: matrix.os == 'macos-latest'
+        run: |
+          cd ./ui
+          make build-darwin
+
+      #      - name: build-ubuntu
+      #        if: matrix.os == 'ubuntu-latest'
+      #        run: |
+      #          cd ./ui
+      #          make build-linux
+      #
+      #      - name: build-windows
+      #        if: matrix.os == 'windows-latest'
+      #        run: |
+      #          cd ./ui
+      #          make build-win
+
+      - name: Run Command
+        run: |
+          echo "步骤"
+          pwd
+          ls -alh
+          upx --version
+          which pnpm
+          pnpm --version
+          which go
+          go version
+          env
+      - name: Run Command1
+        run: |
+          echo "步骤1"
+          cd ./ui
+          pwd
+          ls -alh
+          upx --version
+          which pnpm
+          pnpm --version
+          which go
+          go version
+          env
+
+      - name: Run Command2
+        run: |
+          echo "步骤2"
+          cd ./packages/backend/cli
+          pwd
+          ls -alh
+          upx --version
+          which pnpm
+          pnpm --version
+          which go
+          go version
+          env
