@@ -1,0 +1,9 @@
+Port: 7654
+AutoOpenDefaultBrowser: true
+CreateSqlFile: true
+Mysql:
+  Host: 39.105.50.248
+  Port: 3306
+  Username: develop
+  Password: dev_7it009DmjxcmXs0
+  DbName: legion_develop

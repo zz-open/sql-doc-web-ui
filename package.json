@@ -1,0 +1,5 @@
+{
+	"devDependencies": {
+		"rollup-plugin-visualizer": "^5.9.2"
+	}
+}
