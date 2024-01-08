@@ -1,5 +1,5 @@
 BIN_NAME=mysqldoc
-MAIN_GO_FILE_NAME=mysqldoc.go
+MAIN_GO_FILE_NAME=$(BIN_NAME).go
 
 # platform
 DARWIN_BIN_NAME=$(BIN_NAME)-darwin
@@ -29,11 +29,11 @@ clean-server:
 #### dev ####
 dev-server-api:
 	@cd $(SRC_PATH) && \
-	go run mysqldoc.go start -f etc/config-dev.yaml --env dev --onlyStartApiServer
+	go run $(MAIN_GO_FILE_NAME) start -f etc/config-dev.yaml --env dev --onlyStartApiServer
 
 dev-server:
 	@cd $(SRC_PATH) && \
-	go run mysqldoc.go start -f etc/config-dev.yaml --env dev
+	go run $(MAIN_GO_FILE_NAME) start -f etc/config-dev.yaml --env dev
 
 .PHONY: build-server build-server-win build-server-linux build-server-darwin
 #### build server for various platform####
