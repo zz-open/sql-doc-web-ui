@@ -1,4 +1,4 @@
-module github.com/zzopen/mysqldoc
+module github.com/zzopen/sql-doc-web-ui
 
 go 1.20
 
