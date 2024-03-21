@@ -9,15 +9,15 @@ import (
 	"os"
 	"time"
 
-	"github.com/zzopen/sql-doc-web-ui/server/common/query"
+	"github.com/zz-open/sql-doc-web-ui/server/common/query"
 
 	"github.com/jmoiron/sqlx"
 
-	"github.com/zzopen/sql-doc-web-ui/server/common/response"
-	"github.com/zzopen/sql-doc-web-ui/server/common/utils"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/db"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/svc"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/types"
+	"github.com/zz-open/sql-doc-web-ui/server/common/response"
+	"github.com/zz-open/sql-doc-web-ui/server/common/utils"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/db"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/svc"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/types"
 )
 
 type ListLogic struct {

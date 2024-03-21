@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 	"gopkg.in/yaml.v3"
 
-	"github.com/zzopen/sql-doc-web-ui/server/internal/config"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
 )
 
 var (

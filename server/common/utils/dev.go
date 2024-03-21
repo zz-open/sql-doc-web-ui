@@ -1,6 +1,6 @@
 package utils
 
-import "github.com/zzopen/sql-doc-web-ui/server/internal/config"
+import "github.com/zz-open/sql-doc-web-ui/server/internal/config"
 
 func IsDev() bool {
 	return config.C.Env == "dev"

@@ -59,7 +59,7 @@ jobs:
           pnpm i
           pnpm build
 
-      - name: 移动ui文件到go源码中
+      - name: Move Ui To Go Src
         run: make mv-ui
 
       - name: Release Go Binary

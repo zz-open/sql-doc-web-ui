@@ -8,8 +8,8 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/zzopen/sql-doc-web-ui/server/internal/config"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/server"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/server"
 )
 
 var (

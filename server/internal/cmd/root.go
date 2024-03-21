@@ -10,10 +10,10 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	configCmd "github.com/zzopen/sql-doc-web-ui/server/internal/cmd/config"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/cmd/start"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/config"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/version"
+	configCmd "github.com/zz-open/sql-doc-web-ui/server/internal/cmd/config"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/cmd/start"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/version"
 )
 
 var (

@@ -7,10 +7,10 @@ import (
 	"strconv"
 
 	"github.com/duke-git/lancet/v2/mathutil"
-	"github.com/zzopen/sql-doc-web-ui/server/common/query"
-	"github.com/zzopen/sql-doc-web-ui/server/common/response"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/svc"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/types"
+	"github.com/zz-open/sql-doc-web-ui/server/common/query"
+	"github.com/zz-open/sql-doc-web-ui/server/common/response"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/svc"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/types"
 )
 
 type InfoLogic struct {

@@ -3,12 +3,12 @@ package config
 import (
 	"net/http"
 
-	"github.com/zzopen/sql-doc-web-ui/server/common/response"
+	"github.com/zz-open/sql-doc-web-ui/server/common/response"
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/zzopen/sql-doc-web-ui/server/internal/logic/config"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/svc"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/logic/config"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/svc"
 )
 
 func InfoHandler(svcCtx *svc.ServiceContext) gin.HandlerFunc {

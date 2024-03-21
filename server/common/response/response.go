@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/zzopen/sql-doc-web-ui/server/internal/types"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/types"
 )
 
 type ApiResponse = types.Reply

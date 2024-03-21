@@ -13,8 +13,8 @@ import (
 	"time"
 
 	"github.com/gookit/color"
-	"github.com/zzopen/sql-doc-web-ui/server/common/utils"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/config"
+	"github.com/zz-open/sql-doc-web-ui/server/common/utils"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
 )
 
 var server *http.Server

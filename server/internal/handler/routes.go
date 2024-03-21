@@ -5,11 +5,11 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/zzopen/sql-doc-web-ui/server/internal/config"
-	handlerConfig "github.com/zzopen/sql-doc-web-ui/server/internal/handler/config"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/handler/db"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/handler/table"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/svc"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
+	handlerConfig "github.com/zz-open/sql-doc-web-ui/server/internal/handler/config"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/handler/db"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/handler/table"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/svc"
 )
 
 func RegisterHandlers(server *gin.Engine, serverCtx *svc.ServiceContext) {

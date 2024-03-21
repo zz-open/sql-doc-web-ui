@@ -5,10 +5,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/zzopen/sql-doc-web-ui/server/internal/middleware"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/middleware"
 
-	"github.com/zzopen/sql-doc-web-ui/server/internal/config"
-	"github.com/zzopen/sql-doc-web-ui/server/ui"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
+	"github.com/zz-open/sql-doc-web-ui/server/ui"
 )
 
 func NewStaticServer(c config.Config) http.Handler {

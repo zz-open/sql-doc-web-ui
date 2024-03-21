@@ -3,10 +3,10 @@ package config
 import (
 	"context"
 
-	"github.com/zzopen/sql-doc-web-ui/server/common/response"
-	"github.com/zzopen/sql-doc-web-ui/server/common/utils"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/config"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/svc"
+	"github.com/zz-open/sql-doc-web-ui/server/common/response"
+	"github.com/zz-open/sql-doc-web-ui/server/common/utils"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/svc"
 )
 
 type InfoLogic struct {

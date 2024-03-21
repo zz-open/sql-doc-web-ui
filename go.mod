@@ -1,4 +1,4 @@
-module github.com/zzopen/sql-doc-web-ui
+module github.com/zz-open/sql-doc-web-ui
 
 go 1.20
 

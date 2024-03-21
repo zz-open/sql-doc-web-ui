@@ -5,8 +5,8 @@ import (
 	"log"
 
 	"github.com/jmoiron/sqlx"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/config"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/db"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/db"
 )
 
 type ServiceContext struct {

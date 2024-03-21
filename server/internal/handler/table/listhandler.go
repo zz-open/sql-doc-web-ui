@@ -3,13 +3,13 @@ package table
 import (
 	"net/http"
 
-	"github.com/zzopen/sql-doc-web-ui/server/common/response"
+	"github.com/zz-open/sql-doc-web-ui/server/common/response"
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/zzopen/sql-doc-web-ui/server/internal/logic/table"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/svc"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/types"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/logic/table"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/svc"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/types"
 )
 
 func ListHandler(svcCtx *svc.ServiceContext) gin.HandlerFunc {

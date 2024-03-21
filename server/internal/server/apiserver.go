@@ -2,11 +2,11 @@ package server
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/zzopen/sql-doc-web-ui/server/common/utils"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/config"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/handler"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/middleware"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/svc"
+	"github.com/zz-open/sql-doc-web-ui/server/common/utils"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/handler"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/middleware"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/svc"
 )
 
 func NewApiServer(c config.Config) *gin.Engine {

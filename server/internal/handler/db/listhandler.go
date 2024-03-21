@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/zzopen/sql-doc-web-ui/server/common/response"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/logic/db"
-	"github.com/zzopen/sql-doc-web-ui/server/internal/svc"
+	"github.com/zz-open/sql-doc-web-ui/server/common/response"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/logic/db"
+	"github.com/zz-open/sql-doc-web-ui/server/internal/svc"
 )
 
 func ListHandler(svcCtx *svc.ServiceContext) gin.HandlerFunc {
