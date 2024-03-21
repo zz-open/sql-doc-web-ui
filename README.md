@@ -2,6 +2,7 @@
 一款网页版查看sql doc的小工具，练手项目
 
 ## 如何使用
+### 下载release
 ### 帮助
 ```shell
 sdwu --help
@@ -30,3 +31,10 @@ sdwu start -f config.yaml
 ```
 
 ![示例截图](./运行截图.png)
+
+
+## 项目介绍
+采用前后端分离的开发模式，最终打包为一个go二进制程序。
+
+前端采用vue3+vite
+后端采用go，提供http server和static server
