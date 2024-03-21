@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-go@v5.0.0
         with:
           go-version: "1.20"
-        run: go version
+      - run: go version
 
       - name: Install Go Dependencies
         run: |
@@ -33,18 +33,19 @@ jobs:
         uses: crazy-max/ghaction-upx@v3.0.0
         with:
           install-only: true
-        run: upx --version
+      - run: upx --version
 
       - name: Set up Pnpm
         uses: pnpm/action-setup@v3.0.0
         with:
           version: latest
-        run: pnpm --version
+      - run: pnpm --version
 
       - name: Set up Node.js
         uses: actions/setup-node@v4.0.2
         with:
           node-version: 20
+      - run: node --version
 
       - name: Install Node.Js Dependencies
         run: |
@@ -61,39 +62,3 @@ jobs:
           which go
           go version
           env
-
-      # - name: build-mac
-      #   if: matrix.os == 'macos-latest'
-      #   run: |
-      #     pwd
-      #     ls -alh
-
-      # - name: build-ubuntu
-      #   if: matrix.os == 'ubuntu-latest'
-      #   run: |
-      #     cd ./ui
-      #     make build-linux
-
-      # - name: build-windows
-      #   if: matrix.os == 'windows-latest'
-      #   run: |
-      #     cd ./ui
-      #     make build-win
-
-      # - name: release
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     draft: true
-      #     files: |
-      #       mysqldoc-out/*.exe
-      #       mysqldoc-out/*.zip
-      #       mysqldoc-out/*.dmg
-      #       mysqldoc-out/*.AppImage
-      #       mysqldoc-out/*.snap
-      #       mysqldoc-out/*.deb
-      #       mysqldoc-out/*.rpm
-      #       mysqldoc-out/*.tar.gz
-      #       mysqldoc-out/*.yml
-      #       mysqldoc-out/*.blockmap
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
