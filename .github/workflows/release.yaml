@@ -13,33 +13,17 @@ jobs:
 
     strategy:
       matrix:
-        goos: [windows] # linux, darwin
-        goarch: [amd64] # "386", arm64
-        # exclude:
-        #   - goarch: "386"
-        #     goos: darwin
-        #   - goarch: arm64
-        #     goos: windows
+        goos: [windows, linux, darwin]
+        goarch: [amd64, "386", arm64]
+        exclude:
+          - goarch: "386"
+            goos: darwin
+          - goarch: arm64
+            goos: windows
 
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v4.1.1
-
-      - name: Set up Go
-        uses: actions/setup-go@v5.0.0
-        with:
-          go-version: "1.20"
-      - run: go version
-
-      - name: Install Go Dependencies
-        run: |
-          go mod tidy
-
-      - name: Set up UPX
-        uses: crazy-max/ghaction-upx@v3.0.0
-        with:
-          install-only: true
-      - run: upx --version
 
       - name: Set up Pnpm
         uses: pnpm/action-setup@v3.0.0
@@ -71,4 +55,4 @@ jobs:
           goversion: "https://golang.google.cn/dl/go1.22.1.linux-amd64.tar.gz"
           project_path: "./server"
           binary_name: "sdwu"
-          extra_files: LICENSE README.md
+          extra_files: LICENSE README.md 运行截图.png
