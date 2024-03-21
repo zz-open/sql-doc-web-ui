@@ -59,7 +59,7 @@ jobs:
           pnpm i
           pnpm build
 
-      - name: Move Ui To Go Src
+      - name: Move UI To Go Src
         run: make mv-ui
 
       - name: Release Go Binary
@@ -68,7 +68,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
-          goversion: 1.20
+          goversion: "https://golang.google.cn/dl/go1.22.1.linux-amd64.tar.gz"
           project_path: "./server"
           binary_name: "sdwu"
           extra_files: LICENSE README.md
