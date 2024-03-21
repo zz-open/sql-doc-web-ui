@@ -37,4 +37,5 @@ sdwu start -f config.yaml
 采用前后端分离的开发模式，最终打包为一个go二进制程序。
 
 前端采用vue3+vite
+
 后端采用go，提供http server和static server
