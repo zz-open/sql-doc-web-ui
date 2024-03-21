@@ -8,12 +8,18 @@ permissions:
   packages: write
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
+  release:
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        os: [ 'ubuntu-latest', 'macos-latest', 'windows-latest' ]
+        goos: [linux, windows, darwin]
+        goarch: ["386", amd64, arm64]
+        exclude:
+          - goarch: "386"
+            goos: darwin
+          - goarch: arm64
+            goos: windows
 
     steps:
       - name: Check out Git repository
@@ -52,13 +58,16 @@ jobs:
           cd ./app
           pnpm i
 
-      - name: Run Command
-        run: |
-          pwd
-          ls -alh
-          upx --version
-          which pnpm
-          pnpm --version
-          which go
-          go version
-          env
+      - name: 移动ui文件到go源码中
+        run: make mv-ui
+
+      - name: Release Go Binary
+        uses: wangyoucao577/go-release-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          goos: ${{ matrix.goos }}
+          goarch: ${{ matrix.goarch }}
+          goversion: 1.20
+          project_path: "./server"
+          binary_name: "sdwu"
+          extra_files: LICENSE README.md
