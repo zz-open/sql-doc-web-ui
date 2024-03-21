@@ -10,8 +10,8 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	configCmd "github.com/zz-open/sql-doc-web-ui/server/internal/cmd/config"
-	"github.com/zz-open/sql-doc-web-ui/server/internal/cmd/start"
+	configCmd "github.com/zz-open/sql-doc-web-ui/server/cmd/config"
+	"github.com/zz-open/sql-doc-web-ui/server/cmd/start"
 	"github.com/zz-open/sql-doc-web-ui/server/internal/config"
 	"github.com/zz-open/sql-doc-web-ui/server/internal/version"
 )
