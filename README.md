@@ -1,29 +1,32 @@
 # sql-doc-web-ui
-网页版sql文档查看工具
+一款网页版查看sql doc的小工具，练手项目
 
-## 使用
+## 如何使用
 ### 帮助
 ```shell
 sdwu --help
 ```
-### 命令行+参数 方式运行
+### 创建默认配置文件
 ```shell
-sdwu --port 服务端口 --host
+sdwu config > config.yaml
 ```
-
-### 命令行+yaml配置文件 方式运行
-```shell
-sdwu -f 配置文件路径
-```
-mysqldoc会自动读取可执行程序所在路径的mysqldoc.yaml文件
+修改config.yaml
 ```yaml
-Port: 
-AutoOpenDefaultBrowser: true
-CreateSqlFile: true
+Host: "0.0.0.0"
+Port: 7654
 Mysql:
   Host: 127.0.0.1
   Port: 3306
   Username: root
-  Password: 
-  DbName: test
+  Password:
+  DatabaseName: test
+OpenBrowser: false
+GenerateSqlFile: false
 ```
+
+### 启动
+```shell
+sdwu start -f config.yaml
+```
+
+![示例截图](./运行截图.png)

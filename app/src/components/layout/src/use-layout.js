@@ -1,6 +1,7 @@
 import {useMixStore} from '~/store'
 import {openFullScreen, delay} from "~/shared/utils"
 import {listenerRefreshHomePage} from '~/shared/emits'
+import {h } from 'vue'
 
 export const useLayout = () => {
     const mixStore = useMixStore()
@@ -19,6 +20,8 @@ export const useLayout = () => {
         return state.status === 1
     }
 
+    
+    const vnode = h('div', [h('div', {style: {color: 'red'}}, '如何使用？'), h('div', '1. url增加参数 db_name=? '), h('div', '2. 下方输入框直接输入')])
     const ready = async () => {
         resetState()
         await initConfig()
@@ -31,7 +34,8 @@ export const useLayout = () => {
                 confirmButtonText: '确认',
                 inputPattern: /^\w+$/,
                 inputErrorMessage: '无效的数据库名称',
-                inputPlaceholder: '请输入数据库名称: 例如 legion_develop'
+                inputPlaceholder: '请输入数据库名称: 例如 legion_develop',
+                message: vnode
             }).then(async ({value}) => {
                 mixStore.setDbName(value)
                 await delay(600)
@@ -53,7 +57,7 @@ export const useLayout = () => {
             return
         }
 
-        const loading = await openFullScreen("加载中，请稍等...")
+        const loading = await openFullScreen("正在解析数据库，请稍等...")
         await mixStore.initTableList(mixStore.dbName)
         await delay(600)
         loading.close()

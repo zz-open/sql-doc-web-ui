@@ -1,3 +1,3 @@
-window.MysqlDocConfig = {
+window.SDWUConfig = {
 
 }

@@ -20,10 +20,10 @@ test:
 	@echo $(ROOT_PATH)
 	@echo $(PROJECT_ROOT_PATH)
 
-# dev 开发模式
+# 开启服务
 .PHONY: dev
 dev:
-	@$(MAKE) dev-server-api
+	@$(MAKE) dev-server
 	echo "[Dev] Start Server success ..."
 
 # 预览模式
@@ -34,15 +34,15 @@ preview:
 	echo "Preview success ..."
 
 # build
-.PHONY: all
-all: build-win build-linux build-darwin
-
-.PHONY: build build-win build-linux build-darwin
+.PHONY: build
 build:
 	@$(MAKE) build-ui
 	@$(MAKE) mv-ui
 	@$(MAKE) build-server
 	echo "Build success ..."
+
+.PHONY: all
+all: build-win build-linux build-darwin
 
 build-win:
 	@$(MAKE) build-ui
@@ -61,3 +61,9 @@ build-darwin:
 	@$(MAKE) mv-ui
 	@$(MAKE) build-server-darwin
 	echo "Build darwin success ..."
+
+.PHONY:	push
+push:
+	@git add .
+	git commit -m "脚本自动push"
+	git push origin main

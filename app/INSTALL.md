@@ -3,7 +3,7 @@
 pnpm create vite ui --template vue
 ```
 
-# 安装依赖
+# 第三方依赖
 ```shell
 pnpm i dayjs && \
 pnpm i axios && \

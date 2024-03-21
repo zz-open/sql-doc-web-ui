@@ -11,7 +11,7 @@ const {appLogoHeight, appLogoImgWidth, appLogoImgHeight} = useCssVar()
 <template>
   <div class="app-logo">
     <img class="img" :src="logoImg">
-    <div class="title">Mysqldoc</div>
+    <div class="title">sdwu</div>
   </div>
 </template>
 
@@ -23,6 +23,7 @@ const {appLogoHeight, appLogoImgWidth, appLogoImgHeight} = useCssVar()
   align-items: center;
   transition: all .2s ease;
   cursor: pointer;
+  border-bottom: 1px solid #dcdfe6;
 
   .img {
     width: v-bind(appLogoImgWidth);

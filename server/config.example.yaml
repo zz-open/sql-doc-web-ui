@@ -1,0 +1,10 @@
+Host: "0.0.0.0"
+Port: 7654
+Mysql:
+  Host: "127.0.0.1"
+  Port: 3306
+  Username: root
+  Password: ""
+  DatabaseName: test
+OpenBrowser: false
+GenerateSqlFile: false

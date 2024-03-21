@@ -8,32 +8,15 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import topLevelAwait from "vite-plugin-top-level-await";
 import { visualizer } from 'rollup-plugin-visualizer';
-import viteCompression from 'vite-plugin-compression'
 import path from 'node:path'
 
 const pathSrc = path.resolve(__dirname, 'src')
 
-const manualChunks = (id) => {
-    console.log("id:", id)
-    if (id.includes('node_modules')) {
-        return id.toString().split('node_modules/')[1].split('/')[0].toString()
-    }
-
-    // try {
-    //     if (id.includes("node_modules")) {
-    //         let name = id.toString().split("node_modules/")[1].split("/");
-    //         if (name[0].toString() === ".pnpm") {
-    //             return name[1].toString()
-    //         } else {
-    //             return name[0].toString()
-    //         }
-    //     }
-    // } catch (error) {
-    //     console.error(error);
-    // }
-}
-
 export default defineConfig({
+    base: "/ui",
+    server: {
+        host: '0.0.0.0',
+    },
     build: {
         chunkSizeWarningLimit: 1024,
         rollupOptions: {

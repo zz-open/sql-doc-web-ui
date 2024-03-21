@@ -1,6 +1,9 @@
 export const getApiUrlPrefix = () => {
-    // return `${window.location.protocol}//${window.location.host}/api`
-    return `${window.location.protocol}//localhost:7654/api`
+    if (import.meta.env.DEV) {
+        return `${window.location.protocol}//${window.location.hostname}:7654/api`
+    }
+    
+    return `${window.location.protocol}//${window.location.host}/api`
 }
 
 export const textDefault = (val) => {
